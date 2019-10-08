@@ -4,15 +4,25 @@
 
 <style>
 	nav {
-		border-bottom: 1px solid rgba(255,62,0,0.1);
 		font-weight: 300;
 		padding: 0 1em;
+		z-index: 2;
+		position: relative;
 	}
-
-	ul {
-		margin: 0;
+@media (min-width: 75rem) {
+	nav {
 		padding: 0;
+		width: 75rem;
+		margin: 0 auto;
 	}
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+	width: fit-content;
+	margin: 0 0 0 auto;
+}
 
 	/* clearfix */
 	ul::after {
@@ -26,35 +36,45 @@
 		float: left;
 	}
 
-	.selected {
+	.selected,
+	a:hover {
 		position: relative;
 		display: inline-block;
 	}
 
-	.selected::after {
+	.selected::after,
+	a:hover::after {
 		position: absolute;
 		content: '';
-		width: calc(100% - 1em);
-		height: 2px;
-		background-color: rgb(255,62,0);
+		width: 100%;
+		height: 8px;
+		background-color: #F5FF19;
 		display: block;
-		bottom: -1px;
+		bottom: 1.25rem;
+		left: 0;
+		z-index: -1;
 	}
 
 	a {
 		text-decoration: none;
-		padding: 1em 0.5em;
+		padding: 1em 0.5rem;
 		display: block;
+		font-size: 1.125rem;
+		margin: 0 1.25rem;
+	}
+	li:last-child a {
+		margin-right: 0;
 	}
 </style>
 
 <nav>
-	<ul>
-		<li><a class='{segment === undefined ? "selected" : ""}' href='.'>home</a></li>
-		<li><a class='{segment === "about" ? "selected" : ""}' href='about'>about</a></li>
-
-		<!-- for the blog link, we're using rel=prefetch so that Sapper prefetches
-		     the blog data when we hover over the link or tap it on a touchscreen -->
-		<li><a rel=prefetch class='{segment === "blog" ? "selected" : ""}' href='blog'>blog</a></li>
+	<ul id="menu">
+		<li><a class='{segment === undefined ? "selected" : ""}' href='.'>Home</a></li>
+		<!-- <li><a rel=prefetch class='{segment === "blog" ? "selected" : ""}' href='blog'>Projects</a></li> -->
+		<!-- <li><a class='{segment === "about" ? "selected" : ""}' href='about'>About</a></li>
+		<li><a class='{segment === "contact" ? "selected" : ""}' href='contact'>Contact</a></li> -->
+		<li><a href='https://www.linkedin.com/in/stephansimonett' target="_blank" class="linkedin">LinkedIn</a></li>
+		<li><a href='https://github.com/wireless25' target="_blank" class="github">Github</a></li>
+		<!-- <li><a class='{segment === "about" ? "selected" : ""}' href='about'>About</a></li> -->
 	</ul>
 </nav>

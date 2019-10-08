@@ -25,16 +25,34 @@
 			font-size: 4em;
 		}
 	}
+	.error-box {
+		margin: 3rem 0;
+		min-height: 80vh;
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+	}
+	.error-code {
+		font-size: 10rem;
+		text-align: center;
+	}
+	.message {
+		font-size: 2rem;
+		text-align: center;
+	}
 </style>
 
 <svelte:head>
 	<title>{status}</title>
 </svelte:head>
 
-<h1>{status}</h1>
+<div class="error-box">
+	<h1 class="error-code">{status}</h1>
+	<p class="message">{error.message}</p>
+	<img src="https://media.giphy.com/media/Q09lToTa0H3Es/giphy.gif" alt="Big Lebowski with a glass"/>
 
-<p>{error.message}</p>
+	{#if dev && error.stack}
+		<pre>{error.stack}</pre>
+	{/if}
+</div>
 
-{#if dev && error.stack}
-	<pre>{error.stack}</pre>
-{/if}

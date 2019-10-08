@@ -1,36 +1,134 @@
 body {
 	margin: 0;
-	font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-	font-size: 14px;
+	font-family: 'Nunito Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+	font-size: 16px;
 	line-height: 1.5;
-	color: #333;
+	color: #4f4f4b;
 }
 
-h1, h2, h3, h4, h5, h6 {
+#sapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+footer {
+  margin-top: auto;
+}
+
+h1, h2 {
 	margin: 0 0 0.5em 0;
-	font-weight: 400;
+	font-weight: 900;
 	line-height: 1.2;
+	color: #0041FF;
+}
+
+@media screen and (min-width: 800px) {
+	h2 {
+		font-size: 2.6rem;
+	}
+}
+
+h3, h4, h5, h6 {
+	font-weight: 900;
+	color: #4f4f4b;
+}
+
+::-moz-selection {
+	color: #fff;
+	background-color: #0041FF;
+}
+::selection { 
+	color: #fff;
+	background-color: #0041ff;
+	opacity: 1;
 }
 
 h1 {
-	font-size: 2em;
+	font-size: 2rem;
 }
 
 a {
 	color: inherit;
 }
 
-code {
-	font-family: menlo, inconsolata, monospace;
-	font-size: calc(1em - 2px);
-	color: #555;
-	background-color: #f0f0f0;
-	padding: 0.2em 0.4em;
-	border-radius: 2px;
+.content {
+	margin: 0 auto 3rem;
+
+}
+@media screen and (min-width: 800px) {
+	.content {
+		max-width: 43rem;
+		font-size: 1.3125rem
+	}
 }
 
-@media (min-width: 400px) {
-	body {
-		font-size: 16px;
-	}
+
+section {
+	padding: 3rem 0;
+}
+
+#sapper {
+	background: rgb(255,255,255);
+	background: linear-gradient(180deg, rgba(255,255,255,1) 50%, rgba(251,251,248,1) 100%);
+}
+
+/* Inline Links => inspired by tympanus, https://tympanus.net/Development/InlineAnchorStyles/ */
+.link-slideright a::before,
+.link-slideright a::after {
+	pointer-events: none;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	-webkit-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+}
+
+.link-slideright {
+	position: relative;
+	z-index: 1; /* needed for setting pseudo-element z-index */
+	overflow: hidden;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.link-slideright a {
+	overflow: hidden;
+	position: relative;
+	display: inline-block;
+	outline: none;
+	color: #0041FF;
+	vertical-align: bottom;
+	text-decoration: none;
+	white-space: nowrap;
+}
+
+.link-slideright a[aria-disabled] {
+	color: #65655f;
+	pointer-events: none
+}
+
+.link-slideright a::before {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	width: 100%;
+	height: 100%;
+	background: #F5FF19;
+	content: '';
+	-webkit-transition: -webkit-transform 0.3s;
+	transition: transform 0.3s;
+	-webkit-transform: scaleY(0.618) translateX(-100%);
+	transform: scaleY(0.618) translateX(-100%);
+}
+
+.link-slideright a:hover::before,
+.link-slideright a:focus::before {
+	-webkit-transform: scaleY(0.618) translateX(0);
+	transform: scaleY(0.618) translateX(0);
+}
+
+.link-slideright a:hover,
+.link-slideright a:focus {
+	color: #4f4f4b;
 }
