@@ -111,9 +111,7 @@ console.log(String.fromCharCode(32,32,32,45,45,45,45,45,45,45,45,45,45,45,45,45,
 </div>
 
 <section id="projects">
-	<div class="content link-slideright">
-		<h2>{content.project.headline}</h2>
-	</div>
+	<h2>{content.project.headline}</h2>
 	<div class="project-teasers">
 
 		{#each content.projects as project}

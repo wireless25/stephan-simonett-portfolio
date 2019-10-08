@@ -11,7 +11,7 @@ export let locked
 
 <style>
 .project-teaser {
-    padding: 2rem;
+    padding: 1rem;
     border-radius: 4px;
     -webkit-box-shadow: 0 0 0 1px rgba(0,0,0,.06), 0 4px 6px -4px rgba(0,0,0,.15);
     box-shadow: 0 0 0 1px rgba(0,0,0,.06), 0 4px 6px -4px rgba(0,0,0,.15);
@@ -21,7 +21,7 @@ export let locked
 }
 @media (min-width: 800px) {
     .project-teaser {
-        flex: 0 1 calc(50% - 5rem);
+        flex: 0 1 calc(50% - 3rem);
     }
 }
 .project-teaser:hover {
