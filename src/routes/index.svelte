@@ -58,12 +58,21 @@ console.log(String.fromCharCode(32,32,32,45,45,45,45,45,45,45,45,45,45,45,45,45,
 			
 		}
 	}
-	code {
-		display: block;
-		white-space: pre-wrap   
-	}
-	pre[class*="language-"] {
+	code[class*="language-"], pre[class*="language-"] {
+		white-space: pre-line;
 		border-radius: 30px;
+	}
+
+	@media screen and (min-width: 800px) {
+		code[class*="language-"], pre[class*="language-"] {
+			white-space: pre-wrap;
+			border-radius: 30px;
+		}
+	}
+
+	.code-block {
+		min-width: 0; /* added */
+  	overflow: auto;
 	}
 </style>
 
