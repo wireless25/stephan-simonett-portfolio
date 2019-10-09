@@ -34,8 +34,7 @@ const data = {
             title: 'Celsius Weather App',
             desc: `A simple yet beautiful weather app realized as a PWA. The weather data is delivered by Open Weather Map, one of the bigest meteo data providers on the globe. The frontend is built with Nuxt and Vue. To save favorites and some settings of each user the application uses Cloud Firestore as database and the Firebase Authentication service for user authentiction handling.
             
-            For organizing the API requests a backend service written in Node is statically hosted and distributed via a CDN, similar to AWS Lambdas, serverless functions they call them. Maybe you stubled over the term JAM Stack so far, this would be exactly that setup. TL;DR - Its the short cut for JavaScript, API, Markup, a modern approach of serving only static files for websites and applications to the client. If you are interessted I recommend you check out this post
-            from XY as a starting point`,
+            For organizing the API requests a backend service written in Node is statically hosted and distributed via a CDN, similar to AWS Lambdas, serverless functions they call them. Maybe you stubled over the term JAM Stack so far, this would be exactly that setup. TL;DR - Its the short cut for JavaScript, API, Markup, a modern approach of serving only static files for websites and applications to the client.`,
             image: '/celsius-mockups.jpg',
             icons: [
                 '<i class="devicon-vuejs-plain"></i>',
