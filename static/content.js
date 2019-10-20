@@ -34,7 +34,7 @@ const data = {
             title: 'Celsius Weather App',
             desc: `A simple yet beautiful weather app realized as a PWA. The weather data is delivered by Open Weather Map, one of the bigest meteo data providers on the globe. The frontend is built with Nuxt and Vue. To save favorites and some settings of each user the application uses Cloud Firestore as database and the Firebase Authentication service for user authentiction handling.
             
-            For organizing the API requests a backend service written in Node is statically hosted and distributed via a CDN, similar to AWS Lambdas, serverless functions they call them. Maybe you stubled over the term JAM Stack so far, this would be exactly that setup. TL;DR - Its the short cut for JavaScript, API, Markup, a modern approach of serving only static files for websites and applications to the client.`,
+            For organizing the API requests a backend service written in Node is hosted as serverless functions. Maybe you stumbled over the term JAM Stack so far. TL;DR - Its the short cut for JavaScript, API, Markup, a modern approach of serving only static files for websites and applications to the client.`,
             image: '/celsius-mockups.jpg',
             icons: [
                 '<i class="devicon-vuejs-plain"></i>',
@@ -89,21 +89,19 @@ const data = {
         `
         // my-life.js
         import studies from 'university-of-basel.js'
-        import workExperiences from 'workExperiences.js'
-
-        let stephan = {}
+        import workExperiences from 'work-experiences.js'
 
         const toBeBorn = async (father, mother) => {
             const birth = await pregnancy(father, mother);
             const child = await birth.json();
             return child
-        }
+        };
         
         const education = async (...disciplines) => {
-            const bachelor = await studies(...disciplines)
-            const degree = await bachelor.json()
+            const bachelor = await studies(...disciplines);
+            const degree = await bachelor.json();
             return degree
-        }
+        };
 
         const myLive = async () => {
             const child = await toBeBorn(christophSimonett, rosannaSimonett);
@@ -113,10 +111,10 @@ const data = {
             const bachelorOfArts = await education(socialAnthropology, economics);
             const degree = await bachelorOfArts.json();
 
-            return {stephan, bachelorOfArts}
-        }
+            return {stephan, degree}
+        };
 
-        myLive()
+        myLive();
         `,
         content: `Starting out in the late 90s with HTML and CSS I fell in love with JavaScript in the past few years with the rising of frameworks like <a href="https://vuejs.org/">Vue</a> and <a href="https://svelte.dev/">Svelte</a>, which is the base for this page you are starring at, BTW. To be precise its <a href="https://sapper.svelte.dev/">Sapper</a>, the SSR framework of Svelte. If you havn't heared of it its worth checking out anyway. Working as a technical project manager at <a href="https://www.wearewondrous.com">WONDROUS</a> for over 5 years I was able to grow from an intern to the head of project management leading all technical realization projects as a director. In all those years frontend development was the one thing I loved the most. Learning this stuff myself and developing projects is the perfect compensation to my day job as a manager.`
     }
