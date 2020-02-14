@@ -58,7 +58,7 @@ console.log(String.fromCharCode(32,32,32,45,45,45,45,45,45,45,45,45,45,45,45,45,
 			
 		}
 	}
-	code[class*="language-"], pre[class*="language-"] {
+	/* code[class*="language-"], pre[class*="language-"] {
 		white-space: pre-line;
 		border-radius: 30px;
 	}
@@ -71,17 +71,17 @@ console.log(String.fromCharCode(32,32,32,45,45,45,45,45,45,45,45,45,45,45,45,45,
 	}
 
 	.code-block {
-		min-width: 0; /* added */
+		min-width: 0;
   	overflow: auto;
-	}
+	} */
 </style>
 
 <svelte:head>
 	<title>Stephan Simonett | PM and Frontend Developer</title>
 	<link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.17.1/themes/prism-okaidia.css" rel="stylesheet" />
+	<!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.17.1/themes/prism-okaidia.css" rel="stylesheet" />
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.17.1/components/prism-core.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.17.1/plugins/autoloader/prism-autoloader.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.17.1/plugins/autoloader/prism-autoloader.min.js"></script> -->
 </svelte:head>
 
 <div class="hero-container">
@@ -133,7 +133,7 @@ console.log(String.fromCharCode(32,32,32,45,45,45,45,45,45,45,45,45,45,45,45,45,
 		<h2>{content.about.headline}</h2>
 		<p>{@html content.about.content}</p>
 	</div>
-	<div class="code-block">
+	<!-- <div class="code-block">
 		<pre class="language-javascript"><code class="language-javascript"><span></span>{@html content.about.code}</code></pre>
-	</div>
+	</div> -->
 </section>
