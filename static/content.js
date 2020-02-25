@@ -31,6 +31,21 @@ const data = {
     //     locked: false
     // },
     {
+      title: 'VanIdea website with order process',
+      desc: `VanIdea sells handmade products and accessoirs for camper vans and transporters. It focusses mainly on the VW T4 community and delivers best in class products.
+      
+The website is built with Nuxt in the frontend and Node in the backend, hosted on now.sh as a static site with lambda functions for the backend stuff. The cart functionality is built with the Vuex Store and with the use of the local storage the user's experience is pretty smooth`,
+      image: '/vanidea-hero-1920-60.jpg',
+      icons: [
+        '<i class="devicon-vuejs-plain"></i>',
+        '<i class="devicon-nodejs-plain"></i>',
+        '<i class="devicon-javascript-plain"></i>',
+      ],
+      url: 'https://vanidea.de',
+      repo: "https://github.com/wireless25/vanidea",
+      locked: true
+    },
+    {
       title: 'Celsius Weather App',
       desc: `A simple yet beautiful weather app realized as a PWA. The weather data is delivered by Open Weather Map, one of the bigest meteo data providers on the globe. The frontend is built with Nuxt and Vue. To save favorites and some settings of each user the application uses Cloud Firestore as database and the Firebase Authentication service for user authentiction handling.
       
