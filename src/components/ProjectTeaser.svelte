@@ -87,7 +87,7 @@ hr {
 </style>
 
 <div class="project-teaser link-slideright">
-    <img class="project-image" src="{image}" alt="Screenshot of the Meribel Ski Transfer Website">
+    <img class="project-image" src="{image}" alt="Screenshot of the website">
     <h3>{title}</h3>
     <p>{desc}</p>
     <hr>
@@ -100,20 +100,20 @@ hr {
         {/each}
     </ul>
     <ul class="links">
-        <li><a href="{url}" target="_blank">
+        <li><a href="{url}" target="_blank" rel="noopener">
             Site
         </a></li>
 
         {#if locked}
             <li>
-                <a href aria-disabled="true">
+                <a href aria-disabled="true" rel="noopener">
 					<span class="icon-lock"></span>
 					Github
 			    </a>
             </li>
         {:else}
             <li>
-                <a href="{repo}" target="_blank">
+                <a href="{repo}" target="_blank" rel="noopener">
                     Github
                 </a>
             </li>
