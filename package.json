@@ -4,13 +4,8 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "sapper dev",
-    "build": "sapper build",
-    "export": "sapper export",
-    "start": "node __sapper__/build",
-    "cy:run": "cypress run",
-    "cy:open": "cypress open",
-    "test": "run-p --race dev cy:run",
-    "now-build": "npm run export"
+    "build": "sapper export",
+    "start": "node __sapper__/build"
   },
   "dependencies": {
     "compression": "^1.7.1",
