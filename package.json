@@ -4,8 +4,7 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "sapper dev",
-    "build": "sapper export",
-    "start": "node __sapper__/build"
+    "build": "sapper export"
   },
   "dependencies": {
     "compression": "^1.7.4",
