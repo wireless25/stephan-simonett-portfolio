@@ -1,26 +1,10 @@
-<style>
-    footer {
-        background: #0041FF;
-    }
-    .footer-content {
-		font-weight: 300;
-		padding: 0 1em;
-		max-width: 75rem;
-		margin: 0 auto;
-        color: #fff;
-        height: 3rem;
-        display: flex;
-        align-items: center
-	}
-	@media (min-with: 75rem) {
-		.footer-content {
-			padding: 0;
-		}
-	}
-</style>
-
-<footer>
-    <div class="footer-content">
-        <span>©2019 | stephansimonett.ch</span>
-    </div>
+<footer
+  class="bg-blue-brand text-white text-lg text center w-full px-4 sm:px-6
+  lg:px-8 py-16 mt-32">
+  <div class="footer-content">
+    <p class="text-center">
+      © Stephan Simonett | stephansimonett.ch | LinkedIn | Github |
+      hello@stephansimonetc.ch
+    </p>
+  </div>
 </footer>
