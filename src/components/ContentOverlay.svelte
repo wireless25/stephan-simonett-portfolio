@@ -2,34 +2,27 @@
   import { fade, fly } from "svelte/transition";
   import { overlayIsOpen } from "../stores.js";
 
-  export let image;
   export let title;
-  export let categories;
   export let url;
   export let desc;
   export let intro;
   export let screenshot;
-
-  let overlay = false;
-
-  overlayIsOpen.subscribe(value => {
-    overlay = value;
-  });
+  export let screenshotMobile;
 
   function closeOverlay(event) {
     if (event.type === "click" || event.key === "Escape") {
-      overlayIsOpen.update(value => (value = false));
+      overlayIsOpen.update(value => false);
     }
   }
 </script>
 
 <svelte:window on:keyup={closeOverlay} />
 
-{#if overlay}
+{#if $overlayIsOpen}
   <button
     transition:fade={{ duration: 200 }}
     on:click={closeOverlay}
-    class="block bg-white fixed top-0 right-0 bottom-0 left-0 w-full z-20
+    class="block bg-white fixed top-0 right-0 bottom-0 left-0 w-full z-50
     opacity-75" />
   <div
     transition:fly={{ x: 100, duration: 500 }}
@@ -39,23 +32,26 @@
     <button on:click={closeOverlay}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="48"
-        height="48"
         viewBox="0 0 48 48"
-        class="text-gray-900 fill-current absolute right-8 top-8">
+        class="w-8 h-8 md:w-12 md:h-12 text-gray-900 fill-current absolute
+        right-8 top-8">
         <path
           d="M38 12.83L35.17 10 24 21.17 12.83 10 10 12.83 21.17 24 10 35.17
           12.83 38 24 26.83 35.17 38 38 35.17 26.83 24z" />
         <path d="M0 0h48v48H0z" fill="none" />
       </svg>
     </button>
-    <div class="max-w-7xl px-32">
-      <div class="mt-32 max-w-3xl">
-        <h2 class="font-black text-6xl">{title}</h2>
-        <p class="font-light text-4xl text-gray-500 mt-4 leading-tight">
+    <div class="max-w-7xl px-8 md:px-32">
+      <div class="mt-16 md:mt-32 max-w-3xl">
+        <h2 class="font-black text-4xl md:text-6xl">{title}</h2>
+        <p
+          class="font-light text-2xl md:text-4xl text-gray-500 mt-2 md:mt-4
+          leading-tight">
           {intro}
         </p>
-        <p class="text-2xl mt-16">{desc}</p>
+        <p class="text-lg md:text-2xl mt-8 md:mt-16">
+          {@html desc}
+        </p>
         <a
           class="group inline-flex mt-10 items-center"
           rel="noopener"
@@ -73,13 +69,16 @@
             <path d="M0-.25h24v24H0z" fill="none" />
           </svg>
           <span
-            class="inline-block font-black text-blue-brand text-2xl
+            class="inline-block font-black text-blue-brand text-lg md:text-2xl
             hover:text-blue-800 transition-all duration-300 -ml-5 hover:ml-0">
             {url}
           </span>
         </a>
       </div>
-      <img class="mt-20 shadow-2xl" src={screenshot} alt="" />
+      <picture>
+        <source media="(max-width: 768px)" srcset={screenshotMobile} />
+        <img class="mt-8 md:mt-20 shadow-2xl" src={screenshot} alt="Website" />
+      </picture>
     </div>
   </div>
 {/if}
