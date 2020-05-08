@@ -14,6 +14,17 @@ module.exports = {
           brand: '#0041FF',
         },
       },
+      spacing: {
+        '1/6': '16.666667%',
+        '8': '2rem',
+      },
+      maxWidth: {
+        '7xl': '80rem',
+      },
+      inset: {
+        '1/6': '16.666667%',
+        '8': '2rem',
+      },
     },
   },
   variants: {
@@ -30,5 +41,4 @@ module.exports = {
     scale: ['responsive', 'hover', 'focus', 'active', 'group-hover'],
     opacity: ['responsive', 'hover', 'focus', 'active', 'group-hover'],
   },
-  plugins: [require('@tailwindcss/ui')],
 };
